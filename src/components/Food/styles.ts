@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
-
+interface Props {
+  available: boolean;
+}
 export const Container = styled.div`
   background: #f0f0f5;
   border-radius: 8px;
@@ -11,8 +13,8 @@ export const Container = styled.div`
     overflow: hidden;
     transition: 0.3s opacity;
     text-align: center;
-
-    ${props =>
+     
+    ${(props: Props) =>
     !props.available &&
     css`
         opacity: 0.3;
@@ -21,6 +23,7 @@ export const Container = styled.div`
     img {
       pointer-events: none;
       user-select: none;
+      max-width: 405px;
     }
   }
 
